@@ -2,5 +2,5 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
-.swp
+*.swp
 todo.txt
