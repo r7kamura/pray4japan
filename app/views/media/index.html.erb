@@ -3,7 +3,7 @@
   <li>
   <%= image_tag m.images.thumbnail.url, :class => :image, :size => "150x150" %>
   <%= image_tag m.user.profile_picture, :class => :userIcon ,:size => "40x40" %>
-  <p class="time"><%= Time.at(m.created_time.to_i).strftime("%m-%d %H:%M") %></p>
+  <p class="time"><%= Time.zone.at(m.created_time.to_i).strftime("%m-%d %H:%M") %></p>
   </li>
 <%- end -%>
 </ul>
