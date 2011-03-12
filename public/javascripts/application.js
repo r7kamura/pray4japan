@@ -1,2 +1,5 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(function(){
+  $('.socialButtons .hatena').socialbutton('hatena');
+  $('.socialButtons .twitter').socialbutton('twitter', { button: 'horizontal', lang: 'en', related: 'ruedap' });
+  $('.socialButtons .facebook').socialbutton('facebook_like', { button: 'button_count', locale: 'en_US' });
+});

@@ -1,9 +1,4 @@
-$color-header: #eee;
-$color-main: white;
-$color-footer: black;
-$color-data: #ddd;
-$color-link: #B02217;
-$site-width: 920px;
+$site-width: 960px;
 @mixin centering {
   margin: 0 auto;
 }
@@ -11,11 +6,6 @@ $site-width: 920px;
   border-radius: $radius;
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
-}
-@mixin top_rounded($radius: 20px) {
-  border-radius: $radius $radius 0 0;
-  -moz-border-radius: $radius $radius 0 0;
-  -webkit-border-radius: $radius $radius 0 0;
 }
 @mixin shadowed($radius: 10px, $color: #000) {
   box-shadow: 0 0 $radius $color;
@@ -35,34 +25,82 @@ $site-width: 920px;
 
 
 // system setting
-* {
-  margin: 0;
-  padding: 0;
-}
-ul {
-  list-style: none;
-}
+* { margin: 0; padding: 0; border: 0; }
+ul { list-style: none;}
 @include link_color(#B02217);
-a {
-  text-decoration: none;
-}
-body {
-  background-color: $color-footer;
-}
+a { text-decoration: none; }
 
 
 // global setting
-.inner {
-  width: $site-width;
-  @include centering
-}
+.inner { @include centering; width:$site-width; }
 .defloat {
   clear: both;
   height: 0;
   border: 0;
 }
 
-
-.images {
-  img.image { width: 200px; }
+#header {
+  padding: 20px 0;
+  .logo { 
+    width:  400px;
+    height: 400px;
+    @include rounded(200px);
+    @include centering;
+    background-color:red;
+    z-index: 1;
+  }
+  position:relative;
+  h1 {
+    position:absolute;
+    top: 200px;
+    width: $site-width;
+    z-index: 0;
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  .hinomaru { padding:20px; width:0; height:0; background-color:red; @include rounded; }
+  .socialButtons {
+    padding-top: 20px;
+    width: 300px;
+    @include centering;
+    li { float: left; }
+    li.hatena { margin-right: 10px; }
+  }
+}
+#footer {
+  text-align: center;
+}
+.images > li {
+  float: left;
+  @include shadowed;
+  position: relative;
+  margin: 20px;
+  height: 150px;
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    background-image: url("/images/loading.gif");
+    background-repeat: no-repeat;
+  }
+  .time {
+    position: absolute;
+    bottom: 10px;
+    font-size: 10px;
+    color: white;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .userIcon {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    @include rounded(5px);
+    border: 1px solid black;
+    &:hover {
+      @include shadowed(5px);
+    }
+  }
 }

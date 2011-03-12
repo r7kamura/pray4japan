@@ -2,7 +2,7 @@ class MediaController < ApplicationController
   before_filter :auth, :only => :index
 
   def index
-    @medias = Instagram.tag_recent_media("playforjapan")
+    @medias = Instagram.tag_recent_media("prayforjapan")
   end
 
   private

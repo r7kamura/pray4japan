@@ -1,10 +1,14 @@
 <ul class="images">
 <%- @medias.each do |m| -%>
   <li>
-  <%= image_tag m[:images][:standard_resolution][:url], :class => :image %>
-  <p class="description">
-  <%= m[:tags].join(" ") %>
-  </p>
+  <%= image_tag m.images.thumbnail.url, :class => :image, :size => "150x150" %>
+  <%= image_tag m.user.profile_picture, :class => :userIcon ,:size => "40x40" %>
+  <p class="time"><%= Time.at(m.created_time.to_i).strftime("%m-%d %H:%M") %></p>
   </li>
 <%- end -%>
 </ul>
+<hr class="defloat" />
+
+<p class="moreButton">
+<%= link_to "more", {:action => :more}, :remote => true %>
+</p>

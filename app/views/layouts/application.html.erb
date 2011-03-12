@@ -3,14 +3,21 @@
 <head>
   <title>Pray4japan</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag %w{jquery rails jquery.socialbutton-1.7.1 application} %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
 <div id="header">
   <div class="inner">
-    header
+    <div class="logo"></div>
+    <h1>PRAY FOR JAPAN</h1>
+    <ul class="socialButtons">
+      <li class="hatena"></li>
+      <li class="twitter"></li>
+      <li class="facebook"></li>
+    </ul>
+    <hr class="defloat" />
   </div>
 </div>
 
@@ -22,7 +29,6 @@
 
 <div id="footer">
   <div class="inner">
-    footer
   </div>
 </div>
 
