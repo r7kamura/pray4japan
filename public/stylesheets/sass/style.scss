@@ -1,0 +1,68 @@
+$color-header: #eee;
+$color-main: white;
+$color-footer: black;
+$color-data: #ddd;
+$color-link: #B02217;
+$site-width: 920px;
+@mixin centering {
+  margin: 0 auto;
+}
+@mixin rounded($radius: 20px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin top_rounded($radius: 20px) {
+  border-radius: $radius $radius 0 0;
+  -moz-border-radius: $radius $radius 0 0;
+  -webkit-border-radius: $radius $radius 0 0;
+}
+@mixin shadowed($radius: 10px, $color: #000) {
+  box-shadow: 0 0 $radius $color;
+  -moz-box-shadow: 0 0 $radius $color;
+  -webkit-box-shadow: 0 0 $radius $color;
+}
+@mixin link_color($color: $color-link) {
+  a {
+    &:link,
+    &:hover,
+    &:visited {
+      color: $color;
+    }
+  }
+}
+
+
+
+// system setting
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+@include link_color(#B02217);
+a {
+  text-decoration: none;
+}
+body {
+  background-color: $color-footer;
+}
+
+
+// global setting
+.inner {
+  width: $site-width;
+  @include centering
+}
+.defloat {
+  clear: both;
+  height: 0;
+  border: 0;
+}
+
+
+.images {
+  img.image { width: 200px; }
+}

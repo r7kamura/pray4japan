@@ -1,7 +1,10 @@
-<ul>
+<ul class="images">
 <%- @medias.each do |m| -%>
   <li>
-    <%= image_tag m[:images][:standard_resolution][:url] %>
+  <%= image_tag m[:images][:standard_resolution][:url], :class => :image %>
+  <p class="description">
+  <%= m[:tags].join(" ") %>
+  </p>
   </li>
 <%- end -%>
 </ul>
