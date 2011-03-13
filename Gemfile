@@ -6,3 +6,4 @@ gem "instagram"
 gem 'jquery-rails'
 gem "settingslogic"
 gem "haml"
+gem "json"
