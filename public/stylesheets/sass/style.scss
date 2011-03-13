@@ -117,4 +117,8 @@ a { text-decoration: none; }
   .twtr-tweet {
     font-size:20px;
   }
+  .loading {
+    @include centering;
+    display: block;
+  }
 }

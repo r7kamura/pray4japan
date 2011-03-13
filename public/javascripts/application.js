@@ -2,7 +2,7 @@ var bindRemote = function(selector) {
   $(selector)
     .click(function(){
       $(this).hide();
-      $('<img src="/images/loading.gif" style="display:block; margin:0 auto;"/>').insertAfter($(this));
+      $('<img src="/images/loading.gif" class="loading"/>').insertAfter($(this));
     });
   $(selector)
     .bind("ajax:success", function(evt, data, status, xhr){
@@ -10,6 +10,7 @@ var bindRemote = function(selector) {
         .replaceWith(data)
         .fadeIn();
       bindRemote(selector);
+      $(".loading").fadeOut();
     });
   $('.images a').lightBox();
 };
