@@ -2,8 +2,8 @@ var bindRemote = function(selector) {
   $(selector)
     .bind("ajax:success", function(evt, data, status, xhr){
       $(this).replaceWith(data);
-      bindRemote(selector)
-    });  
+      bindRemote(selector);
+    });
 };
 
 $(function(){

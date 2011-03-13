@@ -21,6 +21,9 @@ $site-width: 960px;
     }
   }
 }
+@mixin main_font {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 
 
@@ -55,7 +58,7 @@ a { text-decoration: none; }
     width: $site-width;
     text-align: center;
     font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    @include main_font;
     color: white;
   }
   .hinomaru { padding:20px; width:0; height:0; background-color:red; @include rounded; }
@@ -70,35 +73,45 @@ a { text-decoration: none; }
 #footer {
   text-align: center;
 }
-.images > li {
-  float: left;
-  @include shadowed;
-  position: relative;
-  margin: 20px;
-  height: 150px;
-  .image {
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden;
-    background-image: url("/images/loading.gif");
-    background-repeat: no-repeat;
-  }
-  .time {
-    position: absolute;
-    bottom: 10px;
-    font-size: 10px;
-    color: white;
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .userIcon {
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    @include rounded(5px);
-    border: 1px solid black;
-    &:hover {
-      @include shadowed(5px);
+
+#main {
+  .images > li {
+    float: left;
+    @include shadowed;
+    position: relative;
+    margin: 20px;
+    height: 150px;
+    .image {
+      max-width: 100%;
+      max-height: 100%;
+      overflow: hidden;
+      background-image: url("/images/loading.gif");
+      background-repeat: no-repeat;
     }
+    .time {
+      position: absolute;
+      bottom: 10px;
+      font-size: 10px;
+      color: white;
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .userIcon {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      @include rounded(5px);
+      border: 1px solid black;
+      &:hover {
+        @include shadowed(5px);
+      }
+    }
+  }
+  .moreButton {
+    text-align: center;
+    padding: 10px;
+    @include main_font;
+    font-weight: bold;
+    font-size: 30px;
   }
 }

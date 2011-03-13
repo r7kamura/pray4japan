@@ -1,6 +1,9 @@
 require "rubygems"
 require "instagram"
 require "pp"
+require "json"
+require "open-uri"
+require "Hashie"
 
 # auth
 Instagram.configure do |config|
@@ -14,7 +17,7 @@ end
 # pp Instagram.tag_recent_media("cat").count
   # 20
 
-pp Instagram.tag_recent_media("playforjapan")
+# pp Instagram.tag_recent_media("playforjapan")
   # 
   #{"tags"=>["neko", "cats", "fuga", "cat"],
     #"type"=>"image",
@@ -67,3 +70,11 @@ pp Instagram.tag_recent_media("playforjapan")
   #   "full_name"=>"Ryo Nakamura"}]
 
 
+#pp Instagram.tag_recent_media("prayforjapan", {:max_id => 36796958, :count => 2})
+
+uri  = "https://api.instagram.com/v1/tags/prayforjapan/media/recent?access_token="+"2476031.227676d.55a3cd10c3c84d8bbee3c548f84a0f62"
+
+str = open(uri){|data|data.read}
+json = JSON.parse(str)
+mash = Hashie::Mash.new(json)
+pp mash
