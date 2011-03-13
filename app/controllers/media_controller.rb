@@ -2,7 +2,7 @@ class MediaController < ApplicationController
   #before_filter :auth, :only => :index
 
   def index
-    options = {:count => 40}
+    options = {:count => 20}
     options.merge!({:max_id => params[:max_id].to_i}) if params[:max_id]
     res = tag_recent_media("prayforjapan", options)
     @images = res.data
