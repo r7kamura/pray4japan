@@ -13,6 +13,40 @@ var bindRemote = function(selector) {
   $('.images a').lightBox({fixedNavigation:true});
 };
 
+var setTwitterGadget = function() {
+  new TWTR.Widget({
+    version: 2,
+    type: 'search',
+    search: 'prayforjapan',
+    interval: 2000,
+    title: 'Twitter',
+    subject: 'prayforjapan',
+    width: 'auto',
+    height: '600',
+    theme: {
+      shell: {
+        background: 'white',
+        color: '#444444'
+      },
+      tweets: {
+        background: '#ffffff',
+        color: '#444444',
+        links: '#1985b5'
+      }
+    },
+    features: {
+      scrollbar: false,
+      loop: true,
+      live: true,
+      hashtags: true,
+      timestamp: true,
+      avatars: true,
+      toptweets: true,
+      behavior: 'default'
+    }
+  }).render().start();
+};
+
 $(function(){
   $('.socialButtons .hatena').socialbutton('hatena');
   $('.socialButtons .twitter').socialbutton('twitter', { button: 'horizontal', lang: 'en', related: 'ruedap' });
