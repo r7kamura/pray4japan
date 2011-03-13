@@ -2,7 +2,8 @@
 <%- images ||= @images -%>
 <%- images.each do |image| -%>
   <li>
-  <%= link_to image_tag(image.images.thumbnail.url, :class => :image, :size => "150x150"), image.images.standard_resolution.url %>
+  <%= link_to(image_tag(image.images.thumbnail.url, :class => :image, :size => "150x150"), image.images.standard_resolution.url,
+              :title => "<a href='#{image.link}' target='_blank'>#{image.caption.text if image.caption} by #{image.user.username}</a>") %>
   <%= image_tag image.user.profile_picture, :class => :userIcon ,:size => "40x40" %>
   <p class="time"><%= Time.zone.at(image.created_time.to_i).strftime("%m-%d %H:%M") %></p>
   </li>
