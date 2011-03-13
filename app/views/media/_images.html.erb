@@ -2,7 +2,7 @@
 <%- images ||= @images -%>
 <%- images.each do |image| -%>
   <li>
-  <%= image_tag image.images.thumbnail.url, :class => :image, :size => "150x150" %>
+  <%= link_to image_tag(image.images.thumbnail.url, :class => :image, :size => "150x150"), image.images.standard_resolution.url %>
   <%= image_tag image.user.profile_picture, :class => :userIcon ,:size => "40x40" %>
   <p class="time"><%= Time.zone.at(image.created_time.to_i).strftime("%m-%d %H:%M") %></p>
   </li>
