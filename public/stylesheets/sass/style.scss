@@ -54,7 +54,7 @@ a { text-decoration: none; }
     height: 400px;
     @include rounded(200px);
     @include centering;
-    background-color:red;
+    background-color: #DD1B30;
   }
   position:relative;
   h1 {

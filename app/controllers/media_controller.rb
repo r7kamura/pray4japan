@@ -22,6 +22,7 @@ class MediaController < ApplicationController
   def collect
     require "ImageCollector"
     ImageCollector.new.collect("playforjapan")
+    render :text => "OK"
   end
 
   private

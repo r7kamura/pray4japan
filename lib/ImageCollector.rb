@@ -5,7 +5,7 @@ DEBUG = true
 class ImageCollector
   def collect(tag)
     images = nil
-    loop do
+    #loop do
       max_id = images && images.pagination.next_max_id
       images = tag_recent_media(tag, :count => 150, :max_id => max_id)
       filter_has_latlng!(images)
@@ -16,7 +16,7 @@ class ImageCollector
           puts "validate or error" if DEBUG
         end
       end
-    end
+    #end
   end
 
   private
