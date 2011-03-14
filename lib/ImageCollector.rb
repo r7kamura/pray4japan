@@ -35,7 +35,7 @@ class ImageCollector
   end
 
   def filter_has_latlng!(images)
-    images.data.select!{|image| image.location && image.location.latitude && image.location.longitude}  
+    images.data = images.data.select{|image| image.location && image.location.latitude && image.location.longitude}  
   end
 
   def tag_recent_media(tag, *args)
