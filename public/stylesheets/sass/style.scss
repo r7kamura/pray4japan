@@ -137,6 +137,17 @@ a { text-decoration: none; }
     @include centering;
     display: block;
   }
+  .twitter {
+    margin-bottom: 20px;
+  }
+  #map {
+    padding: 20px;
+    @include rounded;
+    @include shadowed;
+    #mapBox {
+      height: 600px;
+    }
+  }
 }
 
 #navi {

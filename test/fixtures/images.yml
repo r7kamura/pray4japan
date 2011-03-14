@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  thumb_url: MyString
+  image_url: MyString
+  link: MyString
+  image_id: 1
+  caption: MyString
+  user: MyString
+  user_picture_url: MyString
+  lat: 1.5
+  lng: 1.5
+
+two:
+  thumb_url: MyString
+  image_url: MyString
+  link: MyString
+  image_id: 1
+  caption: MyString
+  user: MyString
+  user_picture_url: MyString
+  lat: 1.5
+  lng: 1.5

@@ -1,6 +1,8 @@
 Pray4japan::Application.routes.draw do
   get "media/index"
   get "media/more"
+  get "media/map"
+  get "media/collect"
   root :to => "media#index"
 
   # The priority is based upon order of creation:

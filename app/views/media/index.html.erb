@@ -5,3 +5,8 @@
 <div class="twitter" id="tweets">
   <%= render :partial => "twitter" %>
 </div>
+
+<div id="map">
+  <div id="mapBox" style="height:800px"></div><!-- GoogleMap will be inserted -->
+  <%= javascript_include_tag url_for(:action => :map) %>
+</div>

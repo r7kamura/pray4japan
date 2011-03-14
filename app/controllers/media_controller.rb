@@ -14,6 +14,16 @@ class MediaController < ApplicationController
     end
   end
 
+  def map
+    @images_with_location = Image.find(:all, :limit => 50, :order => 'created_at DESC')
+    render :content_type => 'text/javascript', :layout => false
+  end
+
+  def collect
+    require "ImageCollector"
+    ImageCollector.new.collect("playforjapan")
+  end
+
   private
   def tag_recent_media(tag, *args)
     require "open-uri"

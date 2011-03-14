@@ -1,0 +1,8 @@
+var startMap = function() {
+  <% ActiveRecord::Base.include_root_in_json = false %>
+  var items = <%= @images_with_location.to_json.html_safe %>;
+  var map = createMap();
+  plotIcons(map, items);
+	map.processId = setInterval(popup(map, items), map.settings.interval);
+}
+
