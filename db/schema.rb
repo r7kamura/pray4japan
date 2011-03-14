@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110314113845) do
+ActiveRecord::Schema.define(:version => 20110314142246) do
 
   create_table "images", :force => true do |t|
     t.string   "thumb_url"
     t.string   "image_url"
     t.string   "link"
     t.integer  "image_id"
-    t.string   "caption"
+    t.text     "caption",          :limit => 255
     t.string   "user"
     t.string   "user_picture_url"
     t.float    "lat"

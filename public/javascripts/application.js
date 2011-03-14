@@ -14,7 +14,7 @@ var selectRandElem = function(array) {
 var createMap = function(opt) {
   var settings = {
     mapSelector:        "#mapBox",// 地図を入れる要素のセレクタ
-    zoom:               7,        // 地図の縮尺比率
+    zoom:               2,        // 地図の縮尺比率
     interval:           7 * 1000, // 吹出し表示切替間隔[sec]
     centerLat:          35.684,   // 地図中心緯度
     centerLng:          139.774,  // 地図中心軽度

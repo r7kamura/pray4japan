@@ -3,5 +3,6 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 *.swp
+*.dat
 todo.txt
 sketch/
