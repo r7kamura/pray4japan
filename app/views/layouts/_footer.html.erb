@@ -1,5 +1,12 @@
 <div class="description">
   <table>
+  </table>
+  <p>
+  </p>
+</div>
+
+<div class="questions">
+  <table>
     <tr>
       <td>
         <%= image_tag "/images/quote.png", :size => "72x72" %>
@@ -14,26 +21,20 @@
         </p>
       </td>
     </tr>
-  </table>
-  <p>
-  </p>
-</div>
-
-<div class="questions">
-  <table>
     <tr>
-      <tr>
-        <td>
-          <%= link_to image_tag("/images/user.png", :size => "72x72"), "http://twitter.com/7kamura", :class => :icon %>
-        </td>
-        <td>
-          <h4>このサイトは誰がつくりましたか？</h4>
-          <p>
-          開発者は <a href="http://twitter.com/7kamura"> @7kamura </a>です。
-          連絡先は<%= link_to "こちら", "http://twitter.com/?status=@7kamura "%>にお願いします。
-          </p>
-        </td>
-      </tr>
-    </table>
-  </div>
+      <td>
+        <%= link_to image_tag("/images/user.png", :size => "72x72"), "http://twitter.com/7kamura", :class => :icon %>
+      </td>
+      <td>
+        <h3>このサイトは誰がつくりましたか？</h3>
+        <p>
+        開発者は<a href="http://twitter.com/7kamura"> @7kamura </a>です。同志社大学で学生をしています。
+        質問や要望は<%= link_to "こちら", "http://twitter.com/?status=@7kamura "%>にお願いします。<br />
+        他に<a href="http://19950117.jp" target="_blank">19950117.jp</a>というサービスを開発しています。
+        技術的なことは <a href="http://d.hatena.ne.jp/r7kamura/20110313/1299977317" target="_blank">ブログ</a> にまとめていますので開発者の方はご参考下さい。
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
 </div>
