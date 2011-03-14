@@ -146,6 +146,9 @@ a { text-decoration: none; }
     @include shadowed;
     #mapBox {
       height: 600px;
+      .popup {
+        width: 150px;
+      }
     }
   }
 }

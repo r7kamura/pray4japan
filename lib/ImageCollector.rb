@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # -*- coding: utf-8 -*-
 
-DEBUG = true
+DEBUG = false
 class ImageCollector
   def collect(tag)
     images = nil

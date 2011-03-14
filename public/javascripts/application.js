@@ -58,17 +58,9 @@ var plotIcons = function(map, items){
 
 // 吹出し用のHTML生成
 var createPopupHtml = function(item) {
-  var htmlTemplate = '\
-    <img src="${image_url}" width="200" height="200" /><br />\
-    ${caption}';
+  var htmlTemplate = '<a href="${image_url}" class="popup" title="${caption}" target="_blank"><img src="${image_url}" width="200" height="200" /></a>';
   return $.tmpl(htmlTemplate, item).get(0);
 };
-
-var linkifyTwitter = function() {
-  twttr.anywhere(function(twitter) {
-    twitter.hovercards();
-  });
-}
 
 // 実行すると地図上の吹出しを更新するようなfunction名を返す
 var popup = function(map, items) {
@@ -77,7 +69,7 @@ var popup = function(map, items) {
     map.openInfoWindowHtml(
       new GLatLng(randitem.lat, randitem.lng),
       createPopupHtml(randitem));
-    linkifyTwitter();
+    $('a.popup').lightBox();
   };
 };
 
