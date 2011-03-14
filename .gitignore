@@ -4,5 +4,4 @@ log/*.log
 tmp/**/*
 *.swp
 todo.txt
-config/application.yml
 sketch/
