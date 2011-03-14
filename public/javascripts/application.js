@@ -45,7 +45,14 @@ var plotIcon = function(map, item){
     shadowSize: new GSize(map.settings.iconShadowSize, map.settings.iconShadowSize),
     image:      item.user_picture_url
   });
-  map.addOverlay(new GMarker(new GLatLng(item.lat, item.lng), icon));
+  var gLatlng = new GLatLng(item.lat, item.lng);
+  var marker = new GMarker(gLatlng, icon);
+  map.addOverlay(marker);
+  GEvent.addListener(marker, 'click', function(event) {
+    var htmlTemplate = '<a href="${image_url}" class="popup" title="${caption}" target="_blank"><img src="${image_url}" width="200" height="200" /></a>';
+    map.openInfoWindowHtml(gLatlng, $.tmpl(htmlTemplate, item).get(0));
+    $('a.popup').lightBox();
+  });
 };
 
 // mapにitemsのアイコンをまとめて配置
