@@ -73,7 +73,7 @@ var googleAnalytics = function() {
 
 $(function(){
   $('.socialButtons .hatena').socialbutton('hatena');
-  $('.socialButtons .twitter').socialbutton('twitter', { button: 'horizontal', lang: 'en', related: 'ruedap' });
+  $('.socialButtons .twitter').socialbutton('twitter', { button: 'horizontal', lang: 'en' });
   $('.socialButtons .facebook').socialbutton('facebook_like', { button: 'button_count', locale: 'en_US' });
   $('.images a').lightBox();
   bindRemote('.moreButton');
