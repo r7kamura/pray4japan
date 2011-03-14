@@ -30,7 +30,7 @@ class ImageCollector
       :lat       => image.location.latitude,
       :lng       => image.location.longitude,
       :user      => image.user.username,
-      :user_picture_url => image.user.profile_picture,
+      :user_picture_url => image.user.profile_picture
     ).save
   end
 
