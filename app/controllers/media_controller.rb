@@ -20,8 +20,7 @@ class MediaController < ApplicationController
   end
 
   def collect
-    require "ImageCollector"
-    ImageCollector.new.collect("playforjapan")
+    system('rake image:collect')
     render :text => "OK"
   end
 
