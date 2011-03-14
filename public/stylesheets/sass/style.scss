@@ -121,6 +121,10 @@ a { text-decoration: none; }
       left: -5px;
       @include rounded(5px);
       border: 1px solid black;
+      display: none;
+    }
+    &:hover .userIcon {
+      display: block;
     }
   }
   .moreButton {
