@@ -9,10 +9,21 @@
   <table>
     <tr>
       <td>
+        <%= image_tag "/images/question.png", :size => "72x72" %>
+      </td>
+      <td>
+        <h3>What？</h3>
+        <p>
+        日本への祈り #prayforjapan をまとめるサイトです。
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <%= image_tag "/images/quote.png", :size => "72x72" %>
       </td>
       <td>
-        <h3>このサイトについて</h3>
+        <h3>Why？</h3>
         <p>
         2011年3月11日に東方北太平洋沖地震が日本を襲いました。
         私にも何か出来ることが無いかと考えているとき、海外から日本への祈りをまとめているタグ「#prayforjapan」を知りました。
@@ -23,15 +34,26 @@
     </tr>
     <tr>
       <td>
+        <%= link_to image_tag("/images/clock.png", :size => "72x72"), "http://twitter.com/7kamura", :class => :icon %>
+      </td>
+      <td>
+        <h3>When？</h3>
+        <p>
+        東北太平洋沖地震が起きて翌日、2011年3月12日につくりました。
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <%= link_to image_tag("/images/user.png", :size => "72x72"), "http://twitter.com/7kamura", :class => :icon %>
       </td>
       <td>
-        <h3>このサイトは誰がつくりましたか？</h3>
+        <h3>Who？</h3>
         <p>
         開発者は<a href="http://twitter.com/7kamura"> @7kamura </a>です。同志社大学で学生をしています。
         質問や要望は<%= link_to "こちら", "http://twitter.com/?status=@7kamura "%>にお願いします。<br />
         他に<a href="http://19950117.jp" target="_blank">19950117.jp</a>というサービスを開発しています。
-        技術的なことは <a href="http://d.hatena.ne.jp/r7kamura/20110313/1299977317" target="_blank">ブログ</a> にまとめていますので開発者の方はご参考下さい。
+        技術的なことは <a href="http://d.hatena.ne.jp/r7kamura/20110313/1299977317" target="_blank">ブログ</a> にまとめているので開発者の方はご参考下さい。
         </p>
       </td>
     </tr>
