@@ -1,3 +1,12 @@
+// selectorの位置までscroll
+var bindSmoothScroll = function(selector) {
+  $(selector).click(function(){
+    $('html,body').animate({ scrollTop: $($(this).attr("href")).offset().top }, 'slow','swing');
+    return false;
+  })
+};
+
+// Rails3でAjaxUpdate
 var bindRemote = function(selector) {
   $(selector)
     .click(function(){
@@ -15,6 +24,7 @@ var bindRemote = function(selector) {
   $('.images a').lightBox();
 };
 
+// twitterのBlogParts
 var setTwitterGadget = function() {
   new TWTR.Widget({
     version: 2,
@@ -55,4 +65,5 @@ $(function(){
   $('.socialButtons .facebook').socialbutton('facebook_like', { button: 'button_count', locale: 'en_US' });
   $('.images a').lightBox();
   bindRemote('.moreButton');
+  bindSmoothScroll('#navi a');
 });

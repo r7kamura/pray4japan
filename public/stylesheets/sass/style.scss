@@ -7,6 +7,11 @@ $site-width: 960px;
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
 }
+@mixin top-rounded($radius: 10px) {
+  border-radius: $radius $radius 0 0;
+  -moz-border-radius: $radius $radius 0 0;
+  -webkit-border-radius: $radius $radius 0 0;
+}
 @mixin shadowed($radius: 10px, $color: #000) {
   box-shadow: 0 0 $radius $color;
   -moz-box-shadow: 0 0 $radius $color;
@@ -71,10 +76,21 @@ a { text-decoration: none; }
   }
 }
 #footer {
-  text-align: center;
+  background-color: black;
+  padding: 40px 0;
+  .inner {
+    background-color: white;
+    @include rounded;
+    padding: 20px;
+    img {
+      padding-right: 20px;
+      border: 0;
+    }
+  }
 }
 
 #main {
+  margin-bottom: 20px;
   .images > li {
     float: left;
     @include shadowed;
@@ -122,3 +138,37 @@ a { text-decoration: none; }
     display: block;
   }
 }
+
+#navi {
+  z-index: 2; // twitterGadget = 1
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  font-size: 12px;
+  ul {
+    overflow: hidden;
+    @include top-rounded;
+    li {
+      float: left;
+      margin-left: 1px;
+      &:first-child {
+        margin-left: 0;
+      }
+      a {
+        display: block;
+        padding: 5px 10px;
+        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+        &:link,
+        &:visited {
+          color: white;
+        }
+        &:hover {
+          background-color: #222;
+        }
+      }
+    }
+  }
+}
+
