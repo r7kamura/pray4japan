@@ -32,19 +32,19 @@ $site-width: 960px;
 
 
 
-// system setting
+// global setting
 * { margin: 0; padding: 0; border: 0; }
 ul { list-style: none;}
 @include link_color(#B02217);
 a { text-decoration: none; }
-
-
-// global setting
 .inner { @include centering; width:$site-width; }
 .defloat {
   clear: both;
   height: 0;
   border: 0;
+}
+body {
+  background-image: url("/images/background.png");
 }
 
 #header {
@@ -148,6 +148,7 @@ a { text-decoration: none; }
     padding: 20px;
     @include rounded;
     @include shadowed;
+    background-color: white;
     #mapBox {
       height: 600px;
       .popup {

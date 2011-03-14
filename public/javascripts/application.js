@@ -120,11 +120,11 @@ var setTwitterGadget = function() {
     height: '600',
     theme: {
       shell: {
-        background: 'white',
+        background: 'url("/images/background.png")',
         color: '#444444'
       },
       tweets: {
-        background: '#ffffff',
+        background: 'url("/images/background.png")',
         color: '#444444',
         links: '#1985b5'
       }
