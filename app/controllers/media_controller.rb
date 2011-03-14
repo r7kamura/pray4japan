@@ -1,6 +1,4 @@
 class MediaController < ApplicationController
-  #before_filter :auth, :only => :index
-
   def index
     options = {:count => 20}
     options.merge!({:max_id => params[:max_id].to_i}) if params[:max_id]
@@ -17,13 +15,6 @@ class MediaController < ApplicationController
   end
 
   private
-  def auth
-    Instagram.configure do |config|
-      config.client_id    = Settings.instagram.client_id
-      config.access_token = Settings.instagram.access_token
-    end
-  end
-
   def tag_recent_media(tag, *args)
     require "open-uri"
     uri = "https://api.instagram.com/v1/tags/#{tag}/media/recent?"
