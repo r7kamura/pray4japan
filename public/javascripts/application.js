@@ -49,8 +49,7 @@ var plotIcon = function(map, item){
   var marker = new GMarker(gLatlng, icon);
   map.addOverlay(marker);
   GEvent.addListener(marker, 'click', function(event) {
-    var htmlTemplate = '<a href="${image_url}" class="popup" title="${caption}" target="_blank"><img src="${image_url}" width="200" height="200" /></a>';
-    map.openInfoWindowHtml(gLatlng, $.tmpl(htmlTemplate, item).get(0));
+    map.openInfoWindowHtml(gLatlng, createPopupHtml(item));
     $('a.popup').lightBox();
   });
 };
@@ -65,8 +64,11 @@ var plotIcons = function(map, items){
 
 // 吹出し用のHTML生成
 var createPopupHtml = function(item) {
-  var htmlTemplate = '<a href="${image_url}" class="popup" title="${caption}" target="_blank"><img src="${image_url}" width="200" height="200" /></a>';
-  return $.tmpl(htmlTemplate, item).get(0);
+  return '\
+    <a href="'+item.image_url+'" class="popup" title="<a href=\''+item.link+'\' target=\'_blank\'>'+(item.caption || "")+'</a>" target="_blank">\
+      <img src="'+item.image_url+'" width="200" height="200" />\
+    </a>';
+  return htmlTemplate;
 };
 
 // 実行すると地図上の吹出しを更新するようなfunction名を返す
